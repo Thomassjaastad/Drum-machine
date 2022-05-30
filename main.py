@@ -1,5 +1,5 @@
-from operator import truediv
 import pygame
+from pygame import mixer
 
 pygame.init()
 
@@ -29,6 +29,16 @@ playing = True
 active_length = 0
 active_beat = 0
 beat_changed = True
+
+# load sounds
+hi_hat = mixer.Sound('spSamples/hatsPitched08.wav')
+
+
+def play_notes():
+    for i in range(len(clicked)):
+        if clicked[i][active_beat] == 1:
+            if i == 0:
+                hi_hat.play()
 
 
 def draw_grid(clicks, beat):
@@ -80,6 +90,10 @@ while run:
     timer.tick(fps)
     screen.fill(black)
     boxes = draw_grid(clicked, active_beat)
+
+    if beat_changed:
+        play_notes()
+        beat_changed = False
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             run = False
