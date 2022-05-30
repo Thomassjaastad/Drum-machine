@@ -17,6 +17,8 @@ label_font = pygame.font.Font('freesansbold.ttf', 32)
 
 fps = 60
 timer = pygame.time.Clock()
+beats = 8
+instruments = 6
 
 
 def draw_grid():
@@ -40,6 +42,10 @@ def draw_grid():
     for i in range(6):
         pygame.draw.line(
             screen, gray, (0, (i*100) + 100), (200, (i*100) + 100), 5)
+    for i in range(beats):
+        for j in range(instruments):
+            rect = pygame.draw.rect(
+                screen, gray, [i*((WIDTH-200) // beats) + 200, j*(100), ((WIDTH-200)//beats), ((HEIGHT-200)//instruments)], 5, 5)
 
 
 run = True
