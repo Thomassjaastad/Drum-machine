@@ -1,5 +1,7 @@
 import pygame
 from pygame import mixer
+import numpy as np
+np.random.seed(49)
 
 pygame.init()
 
