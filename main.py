@@ -13,7 +13,7 @@ dark_gray = (169, 169, 169)
 green = (0, 255, 0)
 gold = (212, 175, 55)
 blue = (0, 255, 255)
-
+gold = 'gold'
 screen = pygame.display.set_mode([WIDTH, HEIGHT])
 
 pygame.display.set_caption('Beat maker')
